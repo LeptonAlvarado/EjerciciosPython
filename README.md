@@ -1,2 +1,2 @@
 # EjerciciosPython
-Ejercicios de python para practicar el lenguaje 
+Ejercicios de python para practicar el lenguaje

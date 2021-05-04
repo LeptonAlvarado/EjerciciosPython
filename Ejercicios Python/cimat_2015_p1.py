@@ -8,29 +8,15 @@ Ejemplo: ante la ejecuci´on de la funci´on con la siguiente cadena de entrada:
 se debe devolver 3
 """
 
-lista = ['a','g','a','f','a','h','a','r','r','a','0']
-contador_a = 0
-contador_otros = 1
+lista = ['a','a','a','f','a','h','a','r','r','a','0']
 contador_ocurrencias = 0
 
-for datos in lista:
+for datos in range(len(lista)-1):
     if datos == 0:
-        contador_otros += 1
-        if contador_otros == 2:
+     if lista[0] == 'a' and lista[1] != 'a':
+         contador_ocurrencias += 1
+    else:
+        if lista[datos-1] != 'a' and lista[datos] == 'a' and lista[datos+1] != 'a':
             contador_ocurrencias += 1
-        break
-    if datos == 'a':
-        contador_a += 1
-        if contador_a == 2:
-            contador_otros = 0
-            contador_a = 0
-    if datos != 'a':
-        contador_otros += 1
-        if contador_otros == 2 and contador_a == 1:
-            contador_ocurrencias += 1
-            contador_otros = 1
-            contador_a = 0
-        elif contador_otros == 2 and contador_a == 0:
-            contador_otros = 1
 
 print(contador_ocurrencias)
