@@ -8,15 +8,17 @@ Ejemplo: ante la ejecuci ́on de la funci ́on con la siguiente matriz data:
 −5    4]
 la funci ́on debe almacenar en result el siguiente contenido:{26,30,16,−5}
 """
-lista_data = [[10,26], [12,20], [-5,4], [10, 3]]
+lista_data = [[10,26], [12,20], [-5,4]]
 
 def sumDiagonals(data, result):
     fila = 0
+    indice_f = 0
     for row in data:
         for elemt in range(len(row)):
-            if fila == 0 and elemt == 1:
-                result.append(data[0][1])
-            elif fila != 0 and elemt == 1:
+            indice_f = fila -1
+            if indice_f < 0 and elemt != 0:
+                result.append(data[fila][elemt])
+            elif elemt != 0:
                 suma = data[fila-1][elemt-1] + data[fila][elemt]
                 result.append(suma)
         fila += 1
